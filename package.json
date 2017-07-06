@@ -1,0 +1,31 @@
+{
+  "name": "findpawcn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Qian",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-csrf": "^3.0.6",
+    "koa-handlebars": "^1.0.0",
+    "koa-hbs": "^1.0.0",
+    "koa-logger": "^3.0.1",
+    "koa-passport": "^3.0.0",
+    "koa-router": "^7.2.1",
+    "koa-session": "^5.3.0",
+    "koa-validate": "^1.0.7",
+    "koa-views": "^6.0.2",
+    "mongoose": "^4.11.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google": "^0.3.0",
+    "passport-google-auth": "^1.0.2",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7"
+  }
+}
