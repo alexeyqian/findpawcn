@@ -9,10 +9,16 @@
 				<form action="/lost/create" method="post">
 					<input type="hidden" name="_csrf" value="{{csrf}}"/>
 					<div class="row">
-						<div class="col-sm-6">
+						<div class="col-xs-6">
 							<div class="form-group">
 								<label for="lost_date">Lost Date</label>
 								<input type="text" id="lost_date" name="lost_date" value="{{m.lost_date}}" class='form-control' placeholder='Lost Date' />
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="zipcode">Zipcode</label>
+								<input type="text" id="zipcode" name="zipcode" value="{{m.zipcode}}" class='form-control' placeholder='Zipcode' />
 							</div>
 						</div>
 					</div>
@@ -23,15 +29,10 @@
 								<input type="text" id="location" name="location" value="{{m.location}}" class='form-control' placeholder='Lost location' />
 							</div>
 						</div>
-						<div class="col-sm-3">
-							<div class="form-group">
-								<label for="zipcode">Zipcode</label>
-								<input type="text" id="zipcode" name="zipcode" value="{{m.zipcode}}" class='form-control' placeholder='Zipcode' />
-							</div>
-						</div>
+						
 					</div>
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-xs-12 col-sm-4">
 							<div class="form-group">
 								<label for="breed">Breed</label>
 								<select id="breed" name="breed" class="form-control">
@@ -42,7 +43,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-xs-6 col-sm-4">
 							<div class="form-group">
 								<label for="color">Color</label>
 								<select id="color" name="color" class="form-control">
@@ -53,7 +54,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-xs-6 col-sm-4">
 							<div class="form-group">
 								<label for="size">Size</label>
 								<select id="size" name="size" class="form-control">
@@ -65,15 +66,15 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-6">
+						<div class="col-xs-6">
 							<div class="form-group">
-								<label for="height">Height</label>
-								<input type="text" id="height" name="height" value="{{m.height}}" class='form-control' placeholder='Hight' />
+								<label for="height">Height(uom:cm)</label>
+								<input type="text" id="height" name="height" value="{{m.height}}" class='form-control' placeholder='Height' />
 							</div>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-xs-6">
 							<div class="form-group">
-								<label for="weight">Weight</label>
+								<label for="weight">Weight(uom:lp)</label>
 								<input type="text" id="weight" name="weight" value="{{m.weight}}" class='form-control' placeholder='Weight' />
 							</div>
 						</div>
@@ -84,6 +85,48 @@
 								<label for="description">Description</label>
 								
 								<textarea id="description" name="description"  class='form-control' placeholder='description' row="3">{{m.description}}</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h3>Contact Owner</h3>
+							<hr/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="firstname">First Name</label>
+								<input type="text" id="firstname" name="firstname" value="{{m.firstname}}" class='form-control' placeholder='First Name' />
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="lastname">Last Name</label>
+								<input type="text" id="lastname" name="lastname" value="{{m.lastname}}" class='form-control' placeholder='Last Name' />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="phone">Phone</label>
+								<input type="text" id="phone" name="phone" value="{{m.phone}}" class='form-control' placeholder='Phone' />
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="text" id="email" name="email" value="{{m.email}}" class='form-control' placeholder='Last Name' />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label for="reword">Reword(uom: $)</label>
+								<input type="text" id="reword" name="reword" value="{{m.reword}}" class='form-control' placeholder='1000' />
 							</div>
 						</div>
 					</div>
@@ -100,6 +143,7 @@
 		</div>
 	</div>
 </div>
+<br/><br/>
 {{#contentFor "footerScripts"}}
 
 {{/contentFor}}
