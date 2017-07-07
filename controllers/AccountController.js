@@ -1,3 +1,5 @@
+const User = require('../models/User');
+
 const AccountController = {
 
 	register_get: async function(ctx){	
@@ -13,8 +15,17 @@ const AccountController = {
 		if(ctx.errors)
 			await ctx.render('account/register', { title: 'Register', csrf: ctx.csrf, errors: JSON.stringify(ctx.errors)});
 		else{
-			
-			ctx.redirect('/account');
+			const user = new User();
+			user.username = ctx.request.body.email;
+			user.password = ctx.request.body.password;
+			await user.save(function (err) {
+			  if (err) {
+			    console.log(err);
+			    throw error;
+			  } else {
+			     ctx.redirect('/account', {title: 'account'});
+			  }
+			});
 		}
 	},
 
