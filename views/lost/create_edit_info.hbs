@@ -2,22 +2,28 @@
 	<div class='container'>
 		<div class='row'>
 			<div class='col-xs-12'>
-				<h1 class='h2'>Publish Lost</h1>
+				
 				{{#if errors}}
 				<div class="alert alert-danger">{{errors}}</div>
 				{{/if}}
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#">Dog info</a></li>
+					<li><a href="/lost/edit_photos?id={{id}}">Photos</a></li>
+					<li><a href="/lost/edit_contact?id={{id}}">Contact</a></li>
+				</ul>
+				<br>
 				<form action="/lost/create" method="post">
 					<input type="hidden" name="_csrf" value="{{csrf}}"/>
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="form-group">
-								<label for="lost_date">Lost Date</label>
+								<label for="lost_date">Lost Date*</label>
 								<input type="text" id="lost_date" name="lost_date" value="{{m.lost_date}}" class='form-control' placeholder='Lost Date' />
 							</div>
 						</div>
 						<div class="col-xs-6">
 							<div class="form-group">
-								<label for="zipcode">Zipcode</label>
+								<label for="zipcode">Zipcode*</label>
 								<input type="text" id="zipcode" name="zipcode" value="{{m.zipcode}}" class='form-control' placeholder='Zipcode' />
 							</div>
 						</div>
@@ -34,7 +40,7 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-4">
 							<div class="form-group">
-								<label for="breed">Breed</label>
+								<label for="breed">Breed*</label>
 								<select id="breed" name="breed" class="form-control">
 									<option value="volvo">Volvo</option>
 									<option value="saab">Saab</option>
@@ -45,7 +51,7 @@
 						</div>
 						<div class="col-xs-6 col-sm-4">
 							<div class="form-group">
-								<label for="color">Color</label>
+								<label for="color">Color*</label>
 								<select id="color" name="color" class="form-control">
 									<option value="yellow">Yellow</option>
 									<option value="black">Black</option>
@@ -56,7 +62,7 @@
 						</div>
 						<div class="col-xs-6 col-sm-4">
 							<div class="form-group">
-								<label for="size">Size</label>
+								<label for="size">Size*</label>
 								<select id="size" name="size" class="form-control">
 									<option value="small">Small</option>
 									<option value="medium">Medium</option>
@@ -65,20 +71,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group">
-								<label for="height">Height(uom:cm)</label>
-								<input type="text" id="height" name="height" value="{{m.height}}" class='form-control' placeholder='Height' />
-							</div>
-						</div>
-						<div class="col-xs-6">
-							<div class="form-group">
-								<label for="weight">Weight(uom:lp)</label>
-								<input type="text" id="weight" name="weight" value="{{m.weight}}" class='form-control' placeholder='Weight' />
-							</div>
-						</div>
-					</div>
+					
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
@@ -88,52 +81,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<h3>Contact Owner</h3>
-							<hr/>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group">
-								<label for="firstname">First Name</label>
-								<input type="text" id="firstname" name="firstname" value="{{m.firstname}}" class='form-control' placeholder='First Name' />
-							</div>
-						</div>
-						<div class="col-xs-6">
-							<div class="form-group">
-								<label for="lastname">Last Name</label>
-								<input type="text" id="lastname" name="lastname" value="{{m.lastname}}" class='form-control' placeholder='Last Name' />
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group">
-								<label for="phone">Phone</label>
-								<input type="text" id="phone" name="phone" value="{{m.phone}}" class='form-control' placeholder='Phone' />
-							</div>
-						</div>
-						<div class="col-xs-6">
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="text" id="email" name="email" value="{{m.email}}" class='form-control' placeholder='Last Name' />
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="form-group">
-								<label for="reword">Reword(uom: $)</label>
-								<input type="text" id="reword" name="reword" value="{{m.reword}}" class='form-control' placeholder='1000' />
-							</div>
-						</div>
-					</div>
+					
+					
 					<div class="row">
 						<div class="col-md-4">
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary form-control">Post</button>
+							<div class="form-group text-right">
+								<button type="submit" class="btn btn-primary">Next</button>
 							</div>
 						</div>
 					</div>
@@ -145,5 +98,4 @@
 </div>
 <br/><br/>
 {{#contentFor "footerScripts"}}
-
 {{/contentFor}}

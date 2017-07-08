@@ -3,15 +3,14 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var lostpawSchema = new Schema({
-	name: String,
-	username: {type: String, required: true, unique: true},
-	password: {type: String, required: true},
-	admin: Boolean,
+	lost_date: {type: Date, required: true},
+	zipcode: String,
 	location: String,
-	meta: {
-		age: Number,
-		website: String
-	},
+	breed: {type: String, required: true},
+	color: {type: String, required: true},
+	size: {type: String, required: true},
+	description: String,
+	created_by: {type: String, required: true},
 	created_at: Date,
 	updated_at: Date
 });
@@ -25,11 +24,6 @@ lostpawSchema.pre('save', function(next){
 	next();
 });
 
-lostpawSchema.methods.dudify = function(){
-	this.name = this.name + '-dude';
-	return this.name;
-};
-
-var LostPaw = mongoose.model('User', lostpawSchema);
+var LostPaw = mongoose.model('LostPaw', lostpawSchema);
 
 module.exports = LostPaw;

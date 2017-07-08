@@ -1,0 +1,47 @@
+<div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-xs-12'>
+				<h1 class='h2'>Photos</h1>
+				{{#if errors}}
+				<div class="alert alert-danger">{{errors}}</div>
+				{{/if}}
+
+				<ul class="nav nav-tabs">
+					<li><a href="/lost/edit_info?id={{id}}">Dog info</a></li>
+					<li class="active"><a href="#">Photos</a></li>
+					<li><a href="/lost/edit_contact?id={{id}}">Contact</a></li>
+				</ul>
+				<br>
+
+				<form action="" method="post">		
+						
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								PHOTO LIST
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6 text-left">
+							<div class="form-group">								
+								<a href="/lost/edit_info?id={{id}}" class="btn btn-primary">Back</a>
+							</div>
+						</div>
+						<div class="col-xs-6 text-right">
+							<div class="form-group">								
+								<a href="/lost/edit_contact?id={{id}}" class="btn btn-primary">Next</a>
+							</div>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+{{#contentFor "footerScripts"}}
+
+{{/contentFor}}

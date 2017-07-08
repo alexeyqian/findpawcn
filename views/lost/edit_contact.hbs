@@ -1,0 +1,80 @@
+<div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-xs-12'>
+				<h1 class='h2'>Contact</h1>
+				{{#if errors}}
+				<div class="alert alert-danger">{{errors}}</div>
+				{{/if}}
+
+				<ul class="nav nav-tabs">
+					<li><a href="/lost/edit_info?id={{id}}">Dog info</a></li>
+					<li><a href="/lost/edit_photos?id={{id}}">Photos</a></li>
+					<li class="active"><a href="#">Contact</a></li>
+				</ul>
+				<br>
+
+				<form action="/lost/create" method="post">
+					<input type="hidden" name="_csrf" value="{{csrf}}"/>
+					
+					
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="firstname">First Name</label>
+								<input type="text" id="firstname" name="firstname" value="{{m.firstname}}" class='form-control' placeholder='First Name' />
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="lastname">Last Name</label>
+								<input type="text" id="lastname" name="lastname" value="{{m.lastname}}" class='form-control' placeholder='Last Name' />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="phone">Phone</label>
+								<input type="text" id="phone" name="phone" value="{{m.phone}}" class='form-control' placeholder='Phone' />
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="text" id="email" name="email" value="{{m.email}}" class='form-control' placeholder='Last Name' />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label for="reword">Reword(uom: $)</label>
+								<input type="text" id="reword" name="reword" value="{{m.reword}}" class='form-control' placeholder='1000' />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6 text-left">
+							<div class="form-group">								
+								<a href="/lost/edit_photos?id={{id}}" class="btn btn-primary">Back</a>
+							</div>
+						</div>
+						<div class="col-xs-6 text-right">
+							<div class="form-group">								
+								<button type="submit" class="btn btn-primary">Post</button>
+							</div>
+						</div>
+					</div>
+
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+{{#contentFor "footerScripts"}}
+
+{{/contentFor}}

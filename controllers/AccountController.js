@@ -18,7 +18,7 @@ const AccountController = {
 			const user = new User();
 			user.username = ctx.request.body.email;
 			user.password = ctx.request.body.password;
-			await user.save(function (err) {
+			user.save(function (err) {
 			  if (err) {
 			    console.log(err);
 			    throw error;
